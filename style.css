@@ -1,0 +1,176 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+  background: radial-gradient(circle at top, #0b1220, #020617);
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  padding: 18px;
+  text-align: center;
+  background: linear-gradient(135deg, #0ea5e9, #1e40af);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+header p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  padding: 16px;
+}
+
+/* =========================
+   CARD STYLE (COMPACT)
+========================= */
+.card {
+  background: linear-gradient(180deg, #020617, #020617cc);
+  padding: 14px 16px;
+  border-radius: 14px;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+  height: auto;
+  min-height: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Card titles */
+.card h3 {
+  font-size: 0.95rem;
+  color: #38bdf8;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Card values */
+.card p {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* =========================
+   FULL WIDTH CARDS (GRAPHS / MAP)
+========================= */
+.full {
+  grid-column: span 2;
+}
+
+@media (max-width: 600px) {
+  .full {
+    grid-column: span 1;
+  }
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  padding: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#engineBtn {
+  background: #22c55e;
+  color: #020617;
+}
+
+#engineBtn:hover {
+  background: #16a34a;
+}
+
+/* =========================
+   MAP
+========================= */
+#map {
+  height: 260px;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* =========================
+   CANVAS (GRAPHS)
+========================= */
+canvas {
+  width: 100% !important;
+  max-height: 240px;
+}
+
+/* =========================
+   FIRE ALERT POPUP
+========================= */
+#firePopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: linear-gradient(180deg, #7f1d1d, #450a0a);
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+}
+
+.popup-content h2 {
+  color: #fecaca;
+  margin-bottom: 8px;
+}
+
+.popup-content p {
+  font-size: 0.95rem;
+}
+
+.popup-content button {
+  margin-top: 14px;
+  background: #22c55e;
+  color: #020617;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #020617;
+  font-size: 0.8rem;
+  opacity: 0.85;
+}

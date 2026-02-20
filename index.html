@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ESP32 Smart Car Dashboard</title>
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+
+<!-- ================= HEADER ================= -->
+<header>
+  <h1>🚗 Smart Car Monitoring Dashboard</h1>
+  <p>ESP32 | IoT | Fire Safety | Vehicle Analytics</p>
+</header>
+
+<!-- ================= MAIN GRID ================= -->
+<main class="grid">
+
+  <!-- Engine Start Time -->
+  <div class="card">
+    <h3>Engine Start Time</h3>
+    <p id="engineStart">--:--:--</p>
+  </div>
+
+  <!-- Engine Running Time -->
+  <div class="card">
+    <h3>Engine Running Time</h3>
+    <p id="engineRunning">00:00:00</p>
+  </div>
+
+  <!-- Fuel Consumption -->
+  <div class="card">
+    <h3>Fuel Consumption</h3>
+    <p><span id="fuelRate">0.00</span> L/hr</p>
+  </div>
+
+  <!-- Engine Control -->
+  <div class="card">
+    <h3>Engine Control</h3>
+    <button id="engineBtn" onclick="toggleEngine()">ENGINE OFF</button>
+  </div>
+
+  <!-- Speed -->
+  <div class="card">
+    <h3>Speed</h3>
+    <p><span id="speed">0</span> km/h</p>
+  </div>
+
+  <!-- Fuel Level -->
+  <div class="card">
+    <h3>Fuel Level</h3>
+    <p><span id="fuel">0</span> %</p>
+  </div>
+
+  <!-- Engine Temperature -->
+  <div class="card">
+    <h3>Engine Temperature</h3>
+    <p><span id="temp">0</span> °C</p>
+  </div>
+
+  <!-- Car Health -->
+  <div class="card">
+    <h3>Car Health</h3>
+    <p id="health">Good</p>
+  </div>
+
+  <!-- Fire Status -->
+  <div class="card">
+    <h3>Fire Status</h3>
+    <p id="fireStatus">Safe</p>
+  </div>
+
+  <!-- Estimated Range -->
+  <div class="card">
+    <h3>Estimated Range</h3>
+    <p><span id="range">0</span> km</p>
+  </div>
+
+  <!-- Speed Graph -->
+  <div class="card full">
+    <h3>Speed vs Time</h3>
+    <canvas id="speedChart"></canvas>
+  </div>
+
+  <!-- Fuel Graph -->
+  <div class="card full">
+    <h3>Fuel Level vs Time</h3>
+    <canvas id="fuelChart"></canvas>
+  </div>
+
+  <!-- Engine Usage Graph -->
+  <div class="card full">
+    <h3>Engine Usage</h3>
+    <canvas id="engineUsageChart"></canvas>
+  </div>
+
+  <!-- Map -->
+  <div class="card full">
+    <h3>Live Vehicle Location</h3>
+    <div id="map"></div>
+  </div>
+
+</main>
+
+<!-- ================= FIRE ALERT POPUP ================= -->
+<div id="firePopup">
+  <div class="popup-content">
+    <h2>🔥 FIRE DETECTED</h2>
+    <p>Engine fire detected! Suppression system activated.</p>
+    <button onclick="closePopup()">OK</button>
+  </div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  ESP32 Based Intelligent Automobile Fire Identification & Safety System
+</footer>
+
+<!-- ================= JS ================= -->
+<script src="script.js"></script>
+
+</body>
+</html>
