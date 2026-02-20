@@ -192,16 +192,29 @@ function updateData() {
 /*************************
  GOOGLE MAP (DEMO)
 **************************/
-let map, marker;
-function initMap() {
-  const location = { lat: 11.0168, lng: 76.9558 };
-  map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 15,
-    center: location
-  });
-  marker = new google.maps.Marker({ position: location, map });
-}
-initMap();
+
+  function initMap() {
+    // Location of Vel Tech High Tech Engineering College
+    const location = { lat: 13.1877832, lng: 80.1064227 };
+
+    // Create map
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: location,
+    });
+
+    // Add marker
+    const marker = new google.maps.Marker({
+      position: location,
+      map: map,
+      title: "Vel Tech High Tech Engineering College"
+    });
+  }
+
+
+<!-- Load Google Maps API -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
 
 /*************************
  TIMERS
@@ -214,3 +227,4 @@ setInterval(updateData, 3000);
 function closePopup() {
   showFirePopup(false);
 }
+
